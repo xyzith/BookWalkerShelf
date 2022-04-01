@@ -1,6 +1,5 @@
 class BookWalkerBook extends HTMLElement {
 	connectedCallback() {
-		console.log(this.dataset);
 		const { imageUrl } = this.dataset;
 		this.style.backgroundImage = `url(${imageUrl})`;
 		this.addEventListener('click', this.showBook.bind(this));

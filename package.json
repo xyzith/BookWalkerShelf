@@ -1,5 +1,7 @@
 {
-  "name": "Book Walker Shelf",
+  "name": "Book-Walker-Shelf",
   "version": "1.0.0",
-  "description": ""
+  "devDependencies": {
+    "eslint": "7.5"
+  }
 }

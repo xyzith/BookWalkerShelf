@@ -12,11 +12,10 @@ function fetchBooks(bookshelfId) {
 	const url =  new URL('https://bookwalker.jp/prx/bookshelf-api/bookshelf-books/');
 	url.searchParams.append('bookshelfId', bookshelfId);
 	return fetch(url);
-	
 }
 
 async function getBookshelfSetId() {
-	const response = await fetchBookshelfSet()
+	const response = await fetchBookshelfSet();
 	const { status } = response;
 	if (status === 200) {
 		const data = await response.json();
@@ -24,7 +23,7 @@ async function getBookshelfSetId() {
 		return bookshelfSetId;
 	} else {
 		// TODO Login
-		throw new Error("Auth");
+		throw new Error('Auth');
 	}
 }
 
@@ -45,7 +44,7 @@ async function getBooks() {
 	if (!bookshelfId) {
 		throw new Error('No bookshelf');
 	}
-	const response = await fetchBooks(bookshelfId)
+	const response = await fetchBooks(bookshelfId);
 	const data = await response.json();
 	return data.entities;
 }

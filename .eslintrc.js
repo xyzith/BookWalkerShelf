@@ -2,12 +2,12 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-	"webextensions": true,
-
+        "webextensions": true,
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 2020
     },
     "rules": {
         "no-trailing-spaces": 1,
