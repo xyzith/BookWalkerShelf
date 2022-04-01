@@ -1,0 +1,32 @@
+body {
+	width: 420px;
+	background-image: linear-gradient(4deg, Peru, BurlyWood);
+}
+
+.book-walker-shelf {
+	display: grid;
+	grid: auto-flow / repeat(3, 1fr);
+	grid-gap: 8px;
+}
+
+book-walker-book {
+	background-repeat: no-repeat;
+	background-size: cover;
+	aspect-ratio: 1 / 1.45;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+book-walker-book:hover::after {
+	content: attr(data-title);
+	display: block;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: #00000088;
+	box-sizing: border-box;
+	border: 2px white solid;
+	padding: 8px;
+}
