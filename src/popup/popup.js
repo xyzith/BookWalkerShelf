@@ -21,9 +21,11 @@ async function getBookshelfSetId() {
 		const data = await response.json();
 		const bookshelfSetId = data?.bookshelfSets?.[0]?.bookshelfSetId; // get first book shelf set id
 		return bookshelfSetId;
+	} else if (status === 401){
+		renderLogin();
+		throw new Error('Unauthorized');
 	} else {
-		// TODO Login
-		throw new Error('Auth');
+		throw new Error('Unknow Error');
 	}
 }
 
@@ -61,7 +63,6 @@ async function tryGetBooks() {
 async function renderBooks() {
 	const books = await tryGetBooks();
 	const main = document.querySelector('.book-walker-shelf');
-	console.log(books);
 	books.forEach(({ uuid, title, imageUrl }) => {
 		const book = document.createElement('book-walker-book');
 		book.dataset.uuid = uuid;
@@ -69,6 +70,12 @@ async function renderBooks() {
 		book.dataset.imageUrl = imageUrl;
 		main.appendChild(book);
 	});
+}
+
+async function renderLogin() {
+	const main = document.querySelector('.book-walker-shelf');
+	const login = document.createElement('book-walker-login');
+	main.replaceWith(login);
 }
 
 renderBooks();

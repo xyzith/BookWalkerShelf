@@ -11,8 +11,6 @@ class BookWalkerBook extends HTMLElement {
 		url.searchParams.append('r', `BROWSER_VIEWER/${uuid}/https://bookwalker.jp/de${uuid}/`);
 		window.open(url, 'BookWalkerReader', 'titlebar=no,toolbar=no width=600 height=800');
 	}
-
-
 }
 
 window.customElements.define('book-walker-book', BookWalkerBook);

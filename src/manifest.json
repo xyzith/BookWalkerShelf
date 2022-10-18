@@ -13,6 +13,7 @@
 		"cookies"
 	],
 	"host_permissions": [
-		"https://bookwalker.jp/*"
-	] 
+		"https://*.bookwalker.jp/*"
+	],
+	"all_frames": true
 }
