@@ -3,7 +3,6 @@
 	"name": "Book Walker Shelf",
 	"version": "1.0",
 
-	"default_locale": "zh_TW",
 	"description": "Book Shelf for BOOK☆WALKER",
 	"action": {
 		"default_popup": "popup/popup.html"
